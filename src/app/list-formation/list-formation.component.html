@@ -1,0 +1,97 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="match">
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+
+            <div class="col-md-2" ></div>
+
+            <div class="col-md-10" >
+                <div class="row" >
+
+                <div class="p-2"><button type="button" class="btn btn-lg btn-primary" id="nouveau" adisabled><a routerLink="/addformation">Nouvelle Formation</a></button></div>
+               </div>
+               <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" >
+                   
+                    <div class="col-md-2"><p>Type Formation</p> </div>
+                    <div class="col-md-2"><p>Titre</p>
+            
+                    </div>
+                    <div class="col-md-1">
+                       <p> Durée</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                    <p>Nombre Session</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Budget</p>
+                    
+                    </div>
+                    <div class="col-md-2">
+                        <p>Domaine</p>
+                     
+                    </div>
+                    
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+            
+          
+            
+
+
+
+            
+            <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" *ngFor="let formation of formations | async">
+                   
+                    <div class="col-md-2">{{formation.type_formation}} </div>
+                    <div class="col-md-2">{{formation.titre}}
+            
+                    </div>
+                    <div class="col-md-1">
+                        {{formation.duree}}
+                    
+                    </div>
+                    <div class="col-md-1">
+                        {{formation.nb_session}}
+                    
+                    </div>
+                    <div class="col-md-1">
+                        {{formation.budget}}
+                    
+                    </div>
+                    <div class="col-md-2">
+                        {{formation.domaine.libelle}}
+                    
+                    </div>
+                    <div class="col-md-3">
+
+                    <ul class="social-links list-inline">
+                        <li class="list-inline-item"><button (click)="updateFormation(formation.id)"  class="btn btn-success btn-circle btn-lg" ><span class="fa fa-pencil-square-o "></span></button></li>
+                        <li class="list-inline-item"><button (click)="onCreate(formation.id)" class="btn btn-danger btn-circle btn-lg"><span class="fa fa-trash " ></span></button></li>
+                    </ul>
+
+                    
+                </div>     
+                </div>
+            </div>
+            
+            
+             
+          
+                
+                
+            </div>
+        </div>
+       
+    </div>
+   
+    </div>
+
+   
+    

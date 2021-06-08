@@ -1,0 +1,65 @@
+<div id="app">
+  <nav class="navbar navbar-expand ">
+  
+    <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/formateurs" class="nav-link"  routerLink="formateurs">Formateur </a>
+      </li>
+      <li class="nav-item">
+        <a href="/formations" class="nav-link" routerLink="formations">Formation </a>
+      </li>
+      <li class="nav-item">
+        <a href="/participants" class="nav-link" routerLink="participants">Participant </a>
+      </li>
+      <li class="nav-item">
+        <a href="/sessions" class="nav-link" routerLink="sessions">Session Formation </a>
+      </li>
+      <li class="nav-item">
+        <a href="/organismes" class="nav-link" routerLink="organismes">Organisme </a>
+      </li>
+      <li class="nav-item">
+        <a href="/domaines" class="nav-link" routerLink="domaines">Domaine </a>
+      </li>
+      <li class="nav-item">
+        <a href="/profils" class="nav-link" routerLink="profils">Profil </a>
+      </li>
+      <li class="nav-item">
+        <a href="/pays" class="nav-link" routerLink="pays">Pays </a>
+      </li>
+
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+      </li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+     
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

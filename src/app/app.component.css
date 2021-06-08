@@ -1,0 +1,24 @@
+.container{
+    margin-left: 0;
+    padding-left: 0;
+    min-width: 100%;
+    padding-right: 0;
+    margin-right: 0;
+   
+
+}
+.navbar-expand {
+    
+    border-color: #E7E7E7;
+    
+}
+
+a
+{
+    color:#E7E7E7;
+}
+nav{
+    height:45px;
+    background-color:#4682B4;
+    font-weight: bold;
+}

@@ -1,0 +1,162 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="match">
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-2" ></div>
+
+            <div class="col-md-10" >
+                <div class="p-2">
+                    <div class="row"><button type="button" class="btn btn-lg btn-primary" id="nouveau" adisabled><a routerLink="/addparticipant">Nouveau Participant</a></button></div>
+
+               </div>
+               <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" >
+                   
+                    <div class="col-md-1"><p>Nom</p> </div>
+                    <div class="col-md-1"><p>Prénom</p>
+            
+                    </div>
+                    <div class="col-md-2">
+                       <p> Email</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                    <p>Téléphone</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Type</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Organisme</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Pays</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Profil</p>
+                    
+                    </div>
+
+                    <div class="col-md-2"  ><p style="margin-left: 25;">Actions</p></div>
+                </div>
+            </div>
+            
+          
+            
+
+
+
+            
+            <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" *ngFor="let participant of participants | async">
+                   
+                    <div class="col-md-1">{{participant.nom }}  </div>
+                    <div class="col-md-1">{{participant.prenom }}  
+            
+                    </div>
+                    <div class="col-md-2">
+                        {{participant.email }}  
+                    
+                    </div>
+                    <div class="col-md-1">
+                        {{participant.tel }}  
+                    
+                    </div>
+                    <div class="col-md-1">
+                        {{participant.type }}  
+                    
+                    </div>
+                    <div class="col-md-1">{{participant.organisme.libelle }}</div>
+                    <div class="col-md-1">{{participant.pays.libelle }}</div>
+                    <div class="col-md-1">{{participant.profil.libelle }}</div>
+
+
+                    <div class="col-md-2">
+
+                    <ul class="social-links list-inline" >
+                        <li  class="list-inline-item"><button id="iconea" (click)="open(content,participant.idParticipant)" class="btn btn-warning btn-circle btn-lg"><span  class="fa fa-info-circle"  ></span></button></li>
+                        <li  class="list-inline-item"><button id="iconea" (click)="updateParticipant(participant.idParticipant)"  class="btn btn-success btn-circle btn-lg" ><span  class="fa fa-pencil-square-o "></span></button></li>
+                        <li  class="list-inline-item"><button id="iconea" (click)="onCreate(participant.idParticipant)" class="btn btn-danger btn-circle btn-lg"><span  class="fa fa-trash " ></span></button></li>
+       
+                     
+                    </ul>
+
+                    
+                </div>     
+                </div>
+            </div>
+            
+            
+             
+          
+                
+                
+            </div>
+        </div>
+       
+    </div>
+   
+    </div>
+
+    <ng-template #content let-modal>
+        <div class="modal-header"  >
+            <h4 class="modal-title" 
+                id="modal-basic-title">
+                Les Sessions
+            </h4>
+            <button type="button" class="close"
+                    aria-label="Close" (click)=
+                    "modal.dismiss('Cross click')">
+      
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                   
+                
+                    <div class="input-group">
+                        <table style= "width:100%;">
+                            <thead>
+                                <th>Session</th>
+                                <th>Date Début</th>
+                                <th>Date Fin</th>
+                                <th>Lieu</th>
+                            </thead>
+                        <tbody >
+                            <tr *ngFor="let form of f ">
+                                <td> {{form.nom}}</td>
+                                <td>{{form.dateDebut | date:'yyyy-MM-dd'}}</td>
+                                <td>{{form.dateFin | date:'yyyy-MM-dd'}} </td>
+                                <td>{{form.lieu}}</td>
+
+                               
+                                <hr style="width: 107%; margin-left:-15 ;">
+                            </tr>
+                         </tbody>
+
+                        </table>
+                       
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer" >
+            <button style="color:black;" type="button" 
+                class="btn btn-outline-warning" 
+                (click)="modal.close('Save click')">
+                OK
+            </button>
+        </div>
+      </ng-template>
+      

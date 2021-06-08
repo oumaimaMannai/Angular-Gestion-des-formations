@@ -1,0 +1,116 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="match">
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-2" ></div>
+     
+            <div class="col-md-10" >
+                <div class="p-2">
+                    <div class="row"><button (click)="open(content)"  type="button" class="btn btn-lg btn-primary" id="nouveau" adisabled>Nouveau Formateur</button></div>
+
+               </div>
+               <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" >
+                   
+            
+                    <div class="col-md-1">
+                        <p>Libelle</p>
+                    
+                    </div>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2"  ><p style="margin-left: 25;">Actions</p></div>
+                </div>
+            </div>
+            
+          
+            
+
+
+
+            
+            <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" *ngFor="let organisme of organismes | async">
+                   
+                
+                    <div class="col-md-1">
+                        {{organisme.libelle}}
+                    
+                    </div>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2">
+
+                    <ul class="social-links list-inline" >
+                        <li  class="list-inline-item"><button id="iconea" (click)="updateOrganisme(organisme.idOrganisme)"  class="btn btn-success btn-circle btn-lg" ><span  class="fa fa-pencil-square-o "></span></button></li>
+                        <li  class="list-inline-item"><button id="iconea" (click)="onCreate(organisme.idOrganisme)" class="btn btn-danger btn-circle btn-lg"><span  class="fa fa-trash " ></span></button></li>
+       
+                     
+                    </ul>
+
+                    
+                </div>     
+                </div>
+            </div>
+            
+            
+             
+          
+                
+                
+            </div>
+        </div>
+       
+    </div>
+   
+    </div>
+
+   
+    <ng-template #content let-modal>
+        <form  class="form-group" (ngSubmit)="onSubmit()">
+
+            <div class="modal-header"  >
+            <h4 class="modal-title" 
+                id="modal-basic-title">
+                Les formations
+            </h4>
+            <button type="button" class="close"
+                    aria-label="Close" (click)=
+                    "modal.dismiss('Cross click')">
+      
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+        </div>
+        <div class="modal-body">
+                <div class="form-group">
+                   
+                
+                    <div class="input-group">
+                        <input type="text" name="libelle" id="libelle" class="form__input" placeholder="Libelle" required [(ngModel)]="organisme.libelle" #libelle="ngModel">
+
+                 
+        
+                        
+                    </div>
+                </div>
+        </div>
+        <div class="modal-footer" >
+            <input  value="  Enregistrer" style="color:black;" type="submit" 
+                class="btn btn-outline-warning" 
+                >
+ 
+            
+        </div>
+    </form>
+
+      </ng-template>
+      
+      
+
+   
+  
+      

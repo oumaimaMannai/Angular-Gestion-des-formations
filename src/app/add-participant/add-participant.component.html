@@ -1,0 +1,109 @@
+<div class="col-md-12" id="add">
+    <div class="raw" id="ajouter">
+<div class="container-fluid">
+    <div class="row main-content bg-success text-center" id="mainf">
+        <div class="col-md-4 text-center company__info">
+            <span class="company__logo"><img src="../assets/addformateur.png" style="width: 350; height:950"></span>
+            <h4 class="company_title"></h4>
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2></h2>
+                </div>
+                <div class="row" style="margin-left: 65;">
+                    <h2>Nouveau Participant</h2>
+                </div>
+                <div class="row">
+                    <form control="" class="form-group" (ngSubmit)="onSubmit()">
+                       
+                        <div class="row">
+                            <input type="text" name="nom" id="nom" class="form__input" placeholder="Nom" required [(ngModel)]="participant.nom" #nom="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="text" name="prenom" id="prenom" class="form__input" placeholder="Prenom" required [(ngModel)]="participant.prenom" #prenom="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="text" name="email" id="email" class="form__input" placeholder="Email" required [(ngModel)]="participant.email" #email="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="text" name="tel" id="tel" class="form__input" placeholder="Tel" required [(ngModel)]="participant.tel" #tel="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="text" name="type" id="type" class="form__input" placeholder="Type Participant" required [(ngModel)]="participant.type" #type="ngModel">
+                        </div>
+                        <div class="row" id="listec">
+                        
+                            <select class=form-control   id="organisme"
+    
+                            required [(ngModel)]="participant.organisme"
+                            name="organisme" style="margin-left: 82 ">
+                                <option value="" disabled selected>organisme</option>
+                                <option  *ngFor="let org of organismes "  [ngValue]="org"  value="{{org.idOrganisme}}">{{org.libelle}} </option>
+                                
+                               </select>
+                            </div>
+
+                            <div class="row" id="listec">
+
+                            <select class=form-control  id="profil"
+    
+                            required [(ngModel)]="participant.profil"
+                            name="profil" style="margin-left: 82 ">
+                                
+                                <option  *ngFor="let prof of profils "  [ngValue]="prof"  value="{{prof.idProfil}}">{{prof.libelle}} </option>
+                                
+                               </select>
+                            </div>
+                           
+
+                            <div class="row"  id="listec"> 
+
+                                <select class=form-control  id="pays"
+        
+                                required [(ngModel)]="participant.pays"
+                                name="pays" style="margin-left: 82 ">
+                                    
+                                    <option  *ngFor="let pay of payss "  [ngValue]="pay"  value="{{pay.idPays}}">{{pay.libelle}} </option>
+                                    
+                                   </select>
+                                </div>
+                     
+                                <div class="row" style="margin-left: 95; padding-bottom: 5;">
+                                    <label style="color: gray; ">Choisir sessions</label>
+                                </div>
+                                <div class="col-lg-4" id="tab"  >
+                                   
+                                    <table class=form-control  id="session"
+                        
+        
+                                    required 
+                                    name="session" style="border: none;" >
+                                    
+                                        <tr *ngFor="let sess of sessions " >
+        
+                                       <td ><input type="checkbox" [value]='sess' name="{{sess}}" (change)='getSessionId($event,sess)' >   {{sess.nom}}    
+                                       </td>
+                                    </tr>
+                              
+                                    </table>
+        
+                                </div>
+                       
+                        <div class="row" style="margin-left: 80; width: 450;">
+                            <input type="submit" value="Enregistrer" class="btnSubmit btn-warning">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="container-fluid text-center footer">
+    
+</div>
+</div>
+</div>
+

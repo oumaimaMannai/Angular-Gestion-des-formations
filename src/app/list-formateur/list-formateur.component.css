@@ -1,0 +1,106 @@
+.content{
+    background-color:#D3D3D3;
+    min-height: 1000;
+   
+}
+.card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-top: 80;
+    background-color: #fff;
+}
+
+.social-links li a {
+    border-radius: 50%;
+    color: rgba(121, 121, 121, .8);
+    display: inline-block;
+    height: 30px;
+    line-height: 27px;
+    border: 2px solid rgba(121, 121, 121, .5);
+    text-align: center;
+    width: 30px
+}
+
+.social-links li a:hover {
+    color: #797979;
+    border: 2px solid #797979
+}
+.thumb-lg {
+    height: 88px;
+    width: 88px;
+}
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 150%;
+    height: auto;
+    margin-top: -80;
+    margin-left: -22;
+    box-shadow: 10px 5px 5px #D3D3D3;
+}
+.text-pink {
+    color: #ff679b!important;
+}
+.btn-rounded {
+    border-radius: 2em;
+    width: 150;
+}
+.text-muted {
+    color: #98a6ad!important;
+}
+h4 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.btn-circle {
+    width: 1.875rem;
+    height: 1.875rem;
+    text-align: center;
+    padding: 0.375rem 0;
+    font-size: 0.75rem;
+    line-height: 1.428571429;
+    border-radius: 0.938rem;
+    
+  }
+  .btn-circle.btn-lg {
+    width: 3.125rem;
+    height: 3.125rem;
+    padding: 0.625rem 1rem;
+    font-size: 1.125rem;
+    line-height: 1.33;
+    border-radius: 1.563rem;
+    
+  }
+  .btn
+  {
+      color: white;
+      box-shadow: 10px 5px 5px #D3D3D3;
+  }
+
+  .fa{
+      font-size: 23;
+  
+}
+#nouveau
+{
+    border-radius: 1.563rem;
+    margin-top: 20;
+    margin-left: 1120;
+    box-shadow: 10px 5px 5px #696969;
+}
+a{
+color: white;
+}
+
+
+#a{
+    font-weight: bold;
+
+}
+td{
+
+    padding: 10;
+}

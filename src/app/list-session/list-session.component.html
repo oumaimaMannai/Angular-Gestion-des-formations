@@ -1,0 +1,148 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="match">
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-2" ></div>
+
+            <div class="col-md-10" >
+                <div class="p-2">
+               </div>
+               <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" >
+                   
+                    <div class="col-md-2"><p>Date Début</p> </div>
+                    <div class="col-md-2"><p>Date Fin</p>
+            
+                    </div>
+                    <div class="col-md-2">
+                       <p> Session</p>
+                    
+                    </div>
+                    <div class="col-md-2">
+                    <p>Nombre Participants</p>
+                    
+                    </div>
+                    <div class="col-md-1">
+                        <p>Lieu</p>
+                    
+                    </div>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2"  ><p style="margin-left: 25;">Actions</p></div>
+                </div>
+            </div>
+            
+          
+            
+
+
+
+            
+            <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" *ngFor="let session of sessions | async">
+                   
+                    <div class="col-md-2">{{session.dateDebut | date:'yyyy-MM-dd'}}  </div>
+                    <div class="col-md-2">{{session.dateFin | date:'yyyy-MM-dd'}}
+            
+                    </div>
+                    <div class="col-md-2">
+                        {{session.nom}}
+                    
+                    </div>
+                    <div class="col-md-2">
+                        {{session.nbParticipant}}
+                    
+                    </div>
+                    <div class="col-md-1">
+                        {{session.lieu}}
+                    
+                    </div>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2">
+
+                    <ul class="social-links list-inline" >
+                        <li  class="list-inline-item"><button id="iconea" (click)="open(content,session.idSession)" class="btn btn-warning btn-circle btn-lg"><span  class="fa fa-info-circle"  ></span></button></li>
+                        <li  class="list-inline-item"><button id="iconea" (click)="updateSession(session.idSession)"  class="btn btn-success btn-circle btn-lg" ><span  class="fa fa-pencil-square-o "></span></button></li>
+                        <li  class="list-inline-item"><button id="iconea" (click)="onCreate(session.idSession)" class="btn btn-danger btn-circle btn-lg"><span  class="fa fa-trash " ></span></button></li>
+       
+                     
+                    </ul>
+
+                    
+                </div>     
+                </div>
+            </div>
+            
+            
+             
+          
+                
+                
+            </div>
+        </div>
+       
+    </div>
+   
+    </div>
+
+   
+    <ng-template #content let-modal>
+        <div class="modal-header"  >
+            <h4 class="modal-title" 
+                id="modal-basic-title">
+                Les formations
+            </h4>
+            <button type="button" class="close"
+                    aria-label="Close" (click)=
+                    "modal.dismiss('Cross click')">
+      
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                   
+                
+                    <div class="input-group">
+                        <table style= "width:100%;">
+                            <thead>
+                                <th>Titre</th>
+                                <th>Type Formation</th>
+                                <th>Durée</th>
+                                <th>Domaine</th>
+                            </thead>
+                        <tbody >
+                            <tr *ngFor="let form of f ">
+                                <td> {{form.titre}}</td>
+                                <td>{{form.type_formation}}</td>
+                                <td>{{form.duree}} mois</td>
+                                <td>{{form.domaine.libelle}}</td>
+
+                               
+                                <hr style="width: 107%; margin-left:-15 ;">
+                            </tr>
+                         </tbody>
+
+                        </table>
+                       
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer" >
+            <button style="color:black;" type="button" 
+                class="btn btn-outline-warning" 
+                (click)="modal.close('Save click')">
+                OK
+            </button>
+        </div>
+      </ng-template>
+      
+      

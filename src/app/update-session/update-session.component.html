@@ -1,0 +1,62 @@
+
+
+<div class="col-md-12" id="add">
+    <div class="raw" id="ajouter">
+<div class="container-fluid">
+    <div class="row main-content bg-success text-center" id="mainf">
+        <div class="col-md-4 text-center company__info">
+            <span class="company__logo"><img src="../assets/add.jpg" style="width: 350; height:700"></span>
+            <h4 class="company_title"></h4>
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2></h2>
+                </div>
+                <div class="row" style="margin-left: 65;">
+                    <h2>Modifier Formation</h2>
+                </div>
+                <div class="row">
+                    <form control="" class="form-group" (ngSubmit)="onSubmit()">
+                       
+ 
+                        <div class="row">
+                            <input type="date" name="titre" id="dateDebut" class="form__input" placeholder="Date Début" required [(ngModel)]="session.dateDebut" #dateDebut="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="date" name="email" id="dateFin" class="form__input" placeholder="Date Fin" required [(ngModel)]="session.dateFin" #dateFin="ngModel">
+                        </div>
+                       
+                        <div class="row">
+                            <input type="text" name="nom" id="nom" class="form__input" placeholder="Session" required [(ngModel)]="session.nom" #nom="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="number" name="nbParticipant" id="nbParticipant" class="form__input" placeholder="Nombre Participant" required [(ngModel)]="session.nbParticipant" #nbParticipant="ngModel">
+                        </div>
+                        <div class="row">
+                            <input type="text" name="lieu" id="lieu" class="form__input" placeholder="Lieu" required [(ngModel)]="session.lieu" #lieu="ngModel">
+                        </div>
+
+
+                      
+
+                       
+                        
+                        <div class="row" style="margin-left: 60; width:450; padding-bottom: 25;padding-top: 25;">
+                            <input type="submit" value="Enregistrer" class="btnSubmit btn-warning">
+                        </div>
+
+
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="container-fluid text-center footer">
+    
+</div>
+</div>
+</div>
